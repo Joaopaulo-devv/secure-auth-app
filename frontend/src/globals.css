@@ -1,0 +1,173 @@
+:root {
+  /* Core colors for cybersecurity theme */
+  --background: #0a0a0a;
+  --foreground: #e0e0e0;
+  --primary: #00ff88;
+  --primary-foreground: #0a0a0a;
+  --secondary: #0099ff;
+  --secondary-foreground: #ffffff;
+  --accent: #00ffff;
+  --accent-foreground: #0a0a0a;
+  --muted: #1a1a1a;
+  --muted-foreground: #888888;
+  --border: #333333;
+  --card: #111111;
+  --popover: #111111;
+  --destructive: #ff3333;
+  --destructive-foreground: #ffffff;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+
+  /* Spacing & Size */
+  --radius: 0.5rem;
+  --radius-sm: 0.25rem;
+  --radius-lg: 0.75rem;
+  --spacing-unit: 0.25rem;
+
+  /* Shadows & Effects */
+  --shadow-sm: 0 1px 2px rgba(0, 255, 136, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 255, 136, 0.15);
+  --shadow-lg: 0 10px 15px rgba(0, 255, 136, 0.2);
+  --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
+  --shadow-glow-blue: 0 0 20px rgba(0, 153, 255, 0.3);
+
+  /* Animations */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* Light mode variant (for future enhancement) */
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #f5f5f5;
+  --border: #e5e5e5;
+}
+
+/* Global styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Utility classes for monospace text */
+.text-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+/* Tech badge styling */
+.tech-badge {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: var(--primary-foreground);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-sm);
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Component base styles */
+.form-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  animation: fade-in var(--transition-normal) ease-out;
+}
+
+.form-input {
+  background: var(--background);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.form-button {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.form-button:active {
+  transform: translateY(0);
+}
+
+.form-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}

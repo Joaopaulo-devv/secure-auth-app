@@ -1,0 +1,145 @@
+.postform-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+  animation: fade-in var(--transition-normal) ease-out;
+}
+
+.postform-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.postform-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.postform-title {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.postform-input {
+  background: var(--background);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+  resize: vertical;
+  min-height: 100px;
+}
+
+.postform-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.15);
+  background: rgba(0, 255, 136, 0.02);
+}
+
+.postform-textarea {
+  composes: postform-input;
+}
+
+.postform-input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.postform-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.postform-submit-button {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.postform-submit-button:hover:not(:disabled) {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.postform-submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.postform-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.postform-cancel-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted-foreground);
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.postform-cancel-button:hover {
+  border-color: var(--destructive);
+  color: var(--destructive);
+  background: rgba(255, 51, 51, 0.05);
+}
+
+.postform-error {
+  background: rgba(255, 51, 51, 0.1);
+  border: 1px solid var(--destructive);
+  color: var(--destructive);
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  animation: slide-up var(--transition-normal) ease-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.postform-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: var(--primary-foreground);
+  border-radius: 50%;
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: rotate(0deg); opacity: 0.7; }
+  50% { transform: rotate(360deg); opacity: 1; }
+}
